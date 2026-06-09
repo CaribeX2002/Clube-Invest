@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog de Investimentos | Clube Invest</title>
+    <meta
+      name="description"
+      content="Transforme seu dinheiro em um poderoso aliado e conquiste sua prosperidade financeira com o treinamento definitivo!"
+    />
+    
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              orange: {
+                400: "#fb923c",
+                500: "#f97316",
+                600: "#ea580c",
+                900: "#7c2d12",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      body {
+        background-color: #000;
+        color: #d4d4d8;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          Arial,
+          sans-serif;
+        overflow-x: hidden;
+      }
+
+      .marquee-container {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        mask-image: linear-gradient(
+          to right,
+          transparent 0%,
+          rgba(0, 0, 0, 1) 5%,
+          rgba(0, 0, 0, 1) 95%,
+          transparent 100%
+        );
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent 0%,
+          rgba(0, 0, 0, 1) 5%,
+          rgba(0, 0, 0, 1) 95%,
+          transparent 100%
+        );
+      }
+      .marquee-content {
+        display: flex;
+        animation: marquee 80s linear infinite;
+        gap: 1.5rem;
+        padding-right: 1.5rem;
+        width: max-content;
+        flex-shrink: 0;
+      }
+      .marquee-container:hover .marquee-content {
+        animation-play-state: paused;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .card-zoom:hover img {
+        transform: scale(1.1);
+      }
+      .faq-answer {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease-out;
+      }
+      .faq-answer.open {
+        grid-template-rows: 1fr;
+      }
+      .faq-answer > div {
+        overflow: hidden;
+      }
+      .mobile-menu {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease-out;
+      }
+      .mobile-menu.open {
+        grid-template-rows: 1fr;
+      }
+      .mobile-menu > div {
+        overflow: hidden;
+      }
+
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 15px rgba(234, 88, 12, 0.4);
+        }
+        50% {
+          transform: scale(1.05);
+          box-shadow:
+            0 0 30px rgba(234, 88, 12, 0.8),
+            0 0 50px rgba(234, 88, 12, 0.3);
+        }
+      }
+      .btn-cta-anim {
+        animation: pulse-glow 2s infinite ease-in-out;
+      }
+    </style>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/GzFbX7t.png">
+</head>
+<body class="selection:bg-orange-500/30 bg-zinc-950 text-zinc-50 relative antialiased min-h-screen">
+  <!-- HEADER -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/5 text-zinc-300"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between"
+      >
+        <a href="/index.html#inicio" class="relative block">
+          <img
+            src="https://i.imgur.com/GzFbX7t.png"
+            alt="Clube Invest Logo"
+            class="h-10 object-contain object-left"
+          />
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            href="/index.html#inicio"
+            class="text-sm font-medium hover:text-orange-500 transition-colors"
+            >Início</a
+          >
+          <a
+            href="/index.html#area-membros"
+            class="text-sm font-medium hover:text-orange-500 transition-colors"
+            >A Área de Membros</a
+          >
+          <a
+            href="/blog/index.html"
+            class="text-sm font-medium hover:text-orange-500 transition-colors"
+            >Blog</a
+          >
+          <a
+            href="/index.html#planos"
+            class="text-sm font-medium hover:text-orange-500 transition-colors"
+            >Mentorias</a
+          >
+          <a
+            href="/index.html#depoimentos"
+            class="text-sm font-medium hover:text-orange-500 transition-colors"
+            >Depoimentos</a
+          >
+          <a
+            href="/index.html#faq"
+            class="text-sm font-medium hover:text-orange-500 transition-colors"
+            >Dúvidas</a
+          >
+        </nav>
+
+        <a
+          href="https://wa.me/558399465730?text=Vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20mentoria"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden md:flex items-center gap-2 bg-orange-600 hover:bg-orange-500 text-white px-5 py-2.5 rounded-full font-semibold transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(234,88,12,0.3)]"
+        >
+          Falar no WhatsApp
+        </a>
+
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-zinc-400">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div
+        id="mobile-menu"
+        class="mobile-menu md:hidden bg-zinc-900 border-t border-white/5"
+      >
+        <div class="flex flex-col py-4 px-4 gap-4">
+          <a
+            href="/index.html#inicio"
+            class="mobile-link text-lg font-medium text-zinc-200"
+            >Início</a
+          >
+          <a
+            href="/index.html#area-membros"
+            class="mobile-link text-lg font-medium text-zinc-200"
+            >A Área de Membros</a
+          >
+          <a
+            href="/blog/index.html"
+            class="mobile-link text-lg font-medium text-zinc-200"
+            >Blog</a
+          >
+          <a
+            href="/index.html#planos"
+            class="mobile-link text-lg font-medium text-zinc-200"
+            >Mentorias</a
+          >
+          <a
+            href="/index.html#depoimentos"
+            class="mobile-link text-lg font-medium text-zinc-200"
+            >Depoimentos</a
+          >
+          <a href="/index.html#faq" class="mobile-link text-lg font-medium text-zinc-200"
+            >Dúvidas</a
+          >
+          <a
+            href="https://wa.me/558399465730?text=Vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20mentoria"
+            target="_blank"
+            class="mt-4 bg-orange-600 text-center text-white px-5 py-3 rounded-xl font-bold"
+          >
+            Falar no WhatsApp
+          </a>
+        </div>
+      </div>
+    </header>
+  
+  <main class="pt-32 pb-24 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,rgba(234,88,12,0.1),transparent_50%)] pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">BLOG <span class="text-orange-500">CLUBE INVEST</span></h1>
+        <p class="text-xl text-zinc-400 max-w-2xl mx-auto">Temos hoje 44 Conteúdos avançados e aprendizados fundamentais para o seu controle patrimonial!</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <a href="/blog/5-erros-comuns-no-investimento.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://picsum.photos/id/201/1280/720" alt="5 Erros Clássicos de quem está começando no mundo dos Investimentos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">5 Erros Clássicos de quem está começando no mundo dos Investimentos</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Separamos os deslizes mais rotineiros para preparar você e proteger o seu dinheiro:...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Ler Artigo <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/acoes-pagadoras-dividendos.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/AiHTgiVSLT0/mqdefault.jpg" alt="A Magia das Ações Pagadoras de Dividendos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">A Magia das Ações Pagadoras de Dividendos</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">É uma parcela do lucro líquido que a empresa decide distribuir. Corporações maduras e estáveis tendem a repartir fatias generosas, pois não precisam r...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/acoes-vs-fundos-de-investimento.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/nBPxXtyHF5c/mqdefault.jpg" alt="Ações vs Fundos: Qual a Melhor Rota para a Liberdade Financeira?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Ações vs Fundos: Qual a Melhor Rota para a Liberdade Financeira?</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Comprar ações diretamente na bolsa permite que você escolha exatamente de quais empresas quer ser sócio. Essa abordagem oferece total controle e o pot...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/analisando-fundos-tijolo.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/vI6FN1AzPoY/mqdefault.jpg" alt="Avaliando Fundos de Tijolo na Prática" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Avaliando Fundos de Tijolo na Prática</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Um imóvel bom aluga rápido. Vacâncias consistentes acima de 15% alertam sobre a má gestão ou localização problemática dos ativos. Evite armadilhas....</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/analisando-preco-lucro-pl.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/m88PfB1VYDA/mqdefault.jpg" alt="Análise Clara: O indicador Preço / Lucro (P/L)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Análise Clara: O indicador Preço / Lucro (P/L)</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Em Termos simples, o P/L responde "Em quantos anos os lucros dessa empresa quitarão o preço investido nas ações hoje?" Um número sob cautela de 15 nor...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/analisando-setores-perenes.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/r1MgM5PMLIc/mqdefault.jpg" alt="Setores Perenes da Bolsa: Investindo Sem Dores de Cabeça" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Setores Perenes da Bolsa: Investindo Sem Dores de Cabeça</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Atacar os blocos fundamentais para a sobrevivência moderna significa ter fluxos de Caixa das Marcas em que as pessoas continuam pagando boletos indepe...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/analisar-acao-metodologia.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://picsum.photos/id/20/1280/720" alt="Metodologias e Truques para Avaliar Ativamente antes de se adquirir a sua primeira Ação na Bolsa de Valores" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Metodologias e Truques para Avaliar Ativamente antes de se adquirir a sua primeira Ação na Bolsa de Valores</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Tornar as percepções dos Preços por Lucro (P/L) algo rotineiro significa entender se determinada corporação demorará em excesso a suprir os lucros des...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Ler Artigo <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/aposentadoria-com-investimentos.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/obP7ZuJ5bfg/mqdefault.jpg" alt="Aposentadoria Precoce com Investimentos em 5 Passos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Aposentadoria Precoce com Investimentos em 5 Passos</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">O foco principal não está apenas em poupar os trocos, mas em escalar drasticamente as receitas ativas enquanto mantém o padrão de custo de vida travad...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/carteira-focada-fiis.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/FSEG1miOADg/mqdefault.jpg" alt="Como Montar Uma Carteira Robusta de FIIs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Como Montar Uma Carteira Robusta de FIIs</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Tijolos oferecem imóveis reais que protegem do aumento da inflação, enquanto o Papel repassa juros e índices mensais elevados. O equilíbrio perfeito b...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/comecar-com-100-reais.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/ANWAM7MHaTk/mqdefault.jpg" alt="Dá Pra Começar Com R$ 100? Como Iniciar Sem Medo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Dá Pra Começar Com R$ 100? Como Iniciar Sem Medo</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Com as Corretoras de Taxa Zero, você compra cotas de FIIs de R$ 9,00 e frações de empresas globais com pequenas quantias....</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/como-comecar-a-investir-do-zero.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://picsum.photos/id/180/1280/720" alt="Como começar a investir do zero: O Guia Definitivo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Como começar a investir do zero: O Guia Definitivo</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Antes de investir, é fundamental saber quanto você ganha e quanto você gasta. Crie um orçamento realista e identifique onde você pode cortar despesas ...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Ler Artigo <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/como-ler-balancos-empresas.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/pZMG8BiI9tY/mqdefault.jpg" alt="Análise Fundamentalista: Lendo Balanços na Prática" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Análise Fundamentalista: Lendo Balanços na Prática</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">A Receita indica quanto entrou na empresa em Vendas. Mas não garante que seja saudável se os custos (operacionais e de Dívidas) ultrapassarem. Focar n...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/como-macroeconomia-afeta-bolsa.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/FdqYzwfuAVc/mqdefault.jpg" alt="A Macroeconomia: Taxa Selic e Os Efeitos Trovões Nas Suas Ações Pessoais" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">A Macroeconomia: Taxa Selic e Os Efeitos Trovões Nas Suas Ações Pessoais</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Toda vez que a SELIC Bate na faixa de Dígito Elevado, Títulos sem Risco geram Rentabilidade Extrema. Qual Sentido e Vontade possuirá uma Empresa para ...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/como-montar-sua-carteira-de-dividendos.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://picsum.photos/id/0/1280/720" alt="O Caminho para Viver de Renda: Carteira de Dividendos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">O Caminho para Viver de Renda: Carteira de Dividendos</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Uma métrica comum que confunde muito investidor é o Dividend Yield elevado (DY). Nem sempre um número alto é algo bom, pode significar que as cotações...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Ler Artigo <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/diversificacao-carteira-blindada.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/xTPW0HWaIdA/mqdefault.jpg" alt="O Segredo da Diversificação Estratégica na Bolsa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">O Segredo da Diversificação Estratégica na Bolsa</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Muitos compram 50 ações diferentes achando que estão diversificados. Na verdade, isso acaba diluindo demais os ganhos e tornando a carteira indomável ...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/diversificacao-de-sucesso.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/KjRJ1uwbRYI/mqdefault.jpg" alt="Montando o Portfólio de Sucesso com Diversificação Pura" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Montando o Portfólio de Sucesso com Diversificação Pura</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Tenha fatias claras: Uma porcentagem para ativos atrelados a inflação, papéis imobiliários atrelados ao CDI, Bolsa Exterior, e Ações focadas nos lucro...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/erros-criticos-investidor-iniciante.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/a7eeYlRxF10/mqdefault.jpg" alt="Os Maiores Erros Financeiros Que Todo Iniciante Comete" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Os Maiores Erros Financeiros Que Todo Iniciante Comete</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Nunca, sob hipótese alguma, pegue dinheiro emprestado ou use alavancagem sem conhecimento. A bolsa oscila brutalmente, mas juros do banco são precisos...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/erros-fatais-na-bolsa.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/1IMgG3ThSMg/mqdefault.jpg" alt="Os 3 Erros Fatais De Iniciantes na Bolsa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Os 3 Erros Fatais De Iniciantes na Bolsa</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Ao invés de ver a Baixa como promoção de queima de estoque da loja, o amador se assusta por manchetes caóticas e encerra a posição entregando dinheiro...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/estrategia-ganhar-dividendos.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/AEcyjvHJ9MM/mqdefault.jpg" alt="Como Escolher as Melhores Empresas para Ganhar Dividendos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Como Escolher as Melhores Empresas para Ganhar Dividendos</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">As excelentes corporações pagam retornos entre 6% e 12% a seus detentores não apenas num ano isolado, mas sistematicamente na década. Esses segmentos ...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/fundos-imobiliarios-fiis-recebendo-alugueis.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://picsum.photos/id/163/1280/720" alt="Fundos Imobiliários (FIIs): Receba renda sem dor de cabeça com Inquilinos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Fundos Imobiliários (FIIs): Receba renda sem dor de cabeça com Inquilinos</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Com um FII, você se une a diversas pessoas ou instituições que entregam a administração monetária para alguém investir o montante em Imóveis Reais na ...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Ler Artigo <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/hedge-protecao-carteira.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/nHM-IE5axWQ/mqdefault.jpg" alt="Hedge: Estratégias Úteis de Proteção De Portfólio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Hedge: Estratégias Úteis de Proteção De Portfólio</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Na turbulência extrema, moedas seguras e minérios tendem a disparar fazendo um contra-peso exato com as retrações de sua parcela exposta na Pura Renda...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/hora-certa-vender-acao.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/hIod-gshZcY/mqdefault.jpg" alt="Quando Chegou A Hora Definitiva De Vender a Sua Ação?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Quando Chegou A Hora Definitiva De Vender a Sua Ação?</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Se a governança tomou decisões corrompidas de transparência, ou o Setor sofreu mudanças estruturais massivas as quais a marca não competirá, encerre a...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/investindo-em-etfs.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/puCUeD91sTY/mqdefault.jpg" alt="O Que São ETFs e Por Que São o Queridinho de Warren Buffett" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">O Que São ETFs e Por Que São o Queridinho de Warren Buffett</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Um ETF Replica Índices. Em vez de quebrar a cabeça elegendo qual empresa ganhará o jogo as cegas, compre pelo ETF e tenha pequenas fatias de Todos Os ...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/investir-exterior-passo-passo.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/IM-CYVcluEI/mqdefault.jpg" alt="Internacionalização: Investindo Lá Fora de Maneira Simples" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Internacionalização: Investindo Lá Fora de Maneira Simples</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Com alguns cliques pelas corretoras unificadas ou contas globais como Nomad, Avenue, Inter, sua remessa ganha conversão imediata e os ativos em Dólar ...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/investir-no-exterior-dollar.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/KrNE9t67OF4/mqdefault.jpg" alt="Investir no Exterior em Dólares: A Defesa Perfeita" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Investir no Exterior em Dólares: A Defesa Perfeita</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Toda vez que a cotação em reais oscila, ou problemas políticos batem em nossa B3, todo capital derrete mundialmente mesmo que ações sejam boas da Bols...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/investir-para-filhos.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/X_pypjNROvg/mqdefault.jpg" alt="Investindo Ativamente para O Futuro Dos Seus Filhos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Investindo Ativamente para O Futuro Dos Seus Filhos</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Você pode abrir carteiras e contas aos seus filhos hoje, comprar bons papéis pagadores todo mês atreladas as Previdências de Juros Compostos gigantes ...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/juros-compostos-pratica.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/DMCgJH-8jcI/mqdefault.jpg" alt="O Efeito Arrasador dos Juros Compostos no Tempo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">O Efeito Arrasador dos Juros Compostos no Tempo</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Diferente do Juro Simples, no composto, os juros daquele dia aplicam-se no saldo que já contêm juros do mês passado, formando uma curva parabólica nos...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/ler-relatorio-gerencial-fii.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/dGLQ7QMAVTo/mqdefault.jpg" alt="Lendo Relatórios Gerenciais dos FIIs sem Complicar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Lendo Relatórios Gerenciais dos FIIs sem Complicar</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Cheque o mapa de Vencimentos contratuais ou inadimplências em grandes Inquilinos. Evite fundos altamente dependentes de um Único Prédio com Único Loca...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/mentalidade-de-investidor-mestre.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://picsum.photos/id/338/1280/720" alt="A Mentalidade Blindada de Mestre Consolidado frente ao Mercado Financeiro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">A Mentalidade Blindada de Mestre Consolidado frente ao Mercado Financeiro</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Quando ativos recuam até metade do dinheiro momentaneamente, é o aspecto psicológico da pessoa envolvida, muito mais do que planilhas fundamentais, o ...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Ler Artigo <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/mentalidade-longo-prazo.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/S2SKqxb1mMc/mqdefault.jpg" alt="A Paciência Milionária: Forjando Seu Maior Aliado Cognitivo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">A Paciência Milionária: Forjando Seu Maior Aliado Cognitivo</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Crises aconteceram aos Longos das Últimas Décadas incalculáveis Vezes com Guerra Históricas Mundiais (2020 de Pandemias ou Bolhas de Séculos 21 Antiga...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/o-guia-completo-do-tesouro-direto.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://picsum.photos/id/119/1280/720" alt="Tesouro Direto: O guia completo que você precisa para dominar e começar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Tesouro Direto: O guia completo que você precisa para dominar e começar</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">O Tesouro Direto é um programa em que você empresta dinheiro para o Governo Federal. É tido por unanimidade como a alocação mais segura, mais do que a...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Ler Artigo <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/o-poder-dos-juros-compostos.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://picsum.photos/id/175/1280/720" alt="Juros Compostos: A oitava maravilha do mundo financeiro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Juros Compostos: A oitava maravilha do mundo financeiro</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Albert Einstein teria dito que os juros compostos são "a força mais poderosa do universo". Quer seja mito ou verdade, a matemática por trás dos juros ...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Ler Artigo <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/poder-do-buy-and-hold.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/GVGN_j_R0R8/mqdefault.jpg" alt="A Mágica Absoluta do Buy and Hold (Comprar e Segurar)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">A Mágica Absoluta do Buy and Hold (Comprar e Segurar)</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Evite ficar migrando de ação pra ação perseguindo as modinhas do ano. Seja sócio vitalício das excelentes e apenas pareça com aqueles ganhadores focad...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/proteger-patrimonio-da-inflacao.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/euqzPYW_8nw/mqdefault.jpg" alt="Como Proteger Seu Patrimônio da Inflação (O Inimigo Oculto)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Como Proteger Seu Patrimônio da Inflação (O Inimigo Oculto)</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Deixar o dinheiro na poupança ou embaixo do colchão significa perder dinheiro real a cada ano. A inflação diminui o que você consegue comprar com a me...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/psicologia-financas-comportamentais.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/XIcEiklROOU/mqdefault.jpg" alt="Finanças Comportamentais: Seja Mestre De Si Mesmo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Finanças Comportamentais: Seja Mestre De Si Mesmo</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Buscamos notícias e videos que confirmam nosso preconceito por tal ativo, ignorando os reais riscos da companhia. Um Mestre estuda fatos com frieza co...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/quanto-precisa-para-aposentadoria.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/u3jdCaVqxxI/mqdefault.jpg" alt="Aposentadoria Antecipada: Quanto Você Precisa Investir?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Aposentadoria Antecipada: Quanto Você Precisa Investir?</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">No movimento Fire (Independência Financeira), existe a famosa regra dos 4%, ou "A regra das 300 vezes". Se você precisa de R$ 5.000 por mês para seu c...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/renda-fixa-vs-renda-variavel.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://picsum.photos/id/370/1280/720" alt="Renda Fixa vs Renda Variável: Qual a melhor opção?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Renda Fixa vs Renda Variável: Qual a melhor opção?</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Na renda fixa, você "empresta" o seu dinheiro a uma instituição financeira, ao governo ou a uma empresa em troca de uma taxa de juros pré ou pós-fixad...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Ler Artigo <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/renda-fixa-vs-variavel-guia.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/dpeerR0nt1M/mqdefault.jpg" alt="Renda Fixa ou Variável: Forme o Equilíbrio Vital" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Renda Fixa ou Variável: Forme o Equilíbrio Vital</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Muitos creem que são investidores arrojados até virem a queda de -40%. A "calmaria" na renda fixa segura a mente de cometer pânicos e te dá fôlego de ...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/renda-passiva-com-fundos-imobiliarios.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/T4LNvuWKb5k/mqdefault.jpg" alt="Fundos Imobiliários: Como Viver de Renda Passiva Recebendo Aluguéis" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Fundos Imobiliários: Como Viver de Renda Passiva Recebendo Aluguéis</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Imagine ser dono de uma pequena parte de grandes shoppings centers, galpões logísticos ou prédios comerciais de alto padrão. Essa é a essência dos Fun...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/reserva-de-oportunidade-trunfo.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/bwWCsAVMd7w/mqdefault.jpg" alt="A Reserva De Oportunidade: A Arma Dos Grandes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">A Reserva De Oportunidade: A Arma Dos Grandes</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Seus investimentos caem, mas se você tiver Tesouro Selic gordo pronto pra ataque, o poder de alavancar quando a Bolsa derrete é espetacular....</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/reserva-emergencia-passo-zero.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/i4k-bXUH-6o/mqdefault.jpg" alt="A Reserva de Emergência e O Fator Prevenção à Instabilidade" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">A Reserva de Emergência e O Fator Prevenção à Instabilidade</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Não há nada mais tranquilizador ou pacificador ao Empreendedor, ou Trabalhador Diário e ao Seu companheiro(a) conjugal do que o Seguro Privado auto co...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/tesouro-selic-rei-reserva.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/xoRUp5sUFxk/mqdefault.jpg" alt="Por Que o Tesouro Selic é o Rei da Reserva de Emergência" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Por Que o Tesouro Selic é o Rei da Reserva de Emergência</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">O Tesouro Selic possui a garantia do próprio Governo Federal, sendo considerado o investimento de menor risco do país. Em tempos de turbulência, seu d...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/tudo-sobre-reserva-de-emergencia.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://picsum.photos/id/26/1280/720" alt="Reserva de Emergência: Seu colchão vitalício da Paz Financeira e Estratégica" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">Reserva de Emergência: Seu colchão vitalício da Paz Financeira e Estratégica</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Você nunca saberá a incerteza de problemas de desemprego rápido ou incidentes físicos imprevistos e familiares. Os poupados recursos deixam sua mental...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Ler Artigo <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+        <a href="/blog/viver-de-renda-dez-anos.html" class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500/50 hover:shadow-[0_10px_30px_rgba(234,88,12,0.15)] transition-all group">
+          
+      <div class="h-48 overflow-hidden relative break-inside-avoid">
+        <img src="https://img.youtube.com/vi/iiBjDoOLoDs/mqdefault.jpg" alt="O Super Projeto De Viver de Renda Em Apenas Uma Década" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="play" class="w-5 h-5 ml-1"></i>
+          </div>
+        </div>
+      </div>
+     
+          <div class="p-8 flex-grow">
+            <h2 class="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">O Super Projeto De Viver de Renda Em Apenas Uma Década</h2>
+            <p class="text-sm text-zinc-400 leading-relaxed">Para acelerar isso a Meta é poupar mais do que 40% do que ganha nos esforços laborais, aplicar isso num Portfólio que crescerá na casa dos Retornos Su...</p>
+          </div>
+          <div class="px-8 pb-8 flex items-center text-orange-500 font-bold group-hover:translate-x-2 transition-transform">
+            Assistir Aula <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </div>
+        </a>
+      </div>
+      
+      <div class="mt-20 p-8 md:p-12 bg-orange-900/20 border border-orange-500/30 rounded-[2rem] text-center max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent"></div>
+        <div class="relative z-10">
+          <div class="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-orange-500/50">
+            <i data-lucide="rocket" class="w-10 h-10 text-white"></i>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Pronto para dar o próximo passo e transformar sua vida financeira de vez?</h2>
+          <p class="text-lg text-zinc-300 mb-10 max-w-2xl mx-auto">Não perca mais tempo tentando aprender sozinho através de erros. Faça parte da Mentoria e aprenda os atalhos para dominar os investimentos a Longo prazo.</p>
+          <a href="/index.html#planos" class="btn-cta-anim inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-500 text-white px-10 py-5 rounded-2xl font-bold text-xl uppercase tracking-wider transition-all shadow-[0_10px_40px_rgba(234,88,12,0.4)] hover:shadow-orange-500/30">
+            GARANTIR MINHA VAGA AGORA
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+  <!-- FOOTER -->
+    <footer
+      class="bg-zinc-950 border-t border-zinc-800 pt-20 pb-10 relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(234,88,12,0.05),transparent_50%)] pointer-events-none"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 relative z-10">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 px-4 md:px-0"
+        >
+          <!-- Brand / About -->
+          <div class="lg:col-span-2">
+            <img
+              src="https://i.imgur.com/GzFbX7t.png"
+              alt="Clube Invest Logo"
+              class="h-14 mb-6 object-contain"
+            />
+            <p class="text-zinc-400 leading-relaxed max-w-md mb-8">
+              Mentoria especializada em construção e multiplicação de
+              patrimônio. Te ensinamos a transformar seu dinheiro em uma máquina
+              de gerar riqueza de forma segura e consistente.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="h-12 w-12 rounded-full border border-zinc-800 bg-zinc-900/50 flex items-center justify-center text-zinc-400 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-5 h-5"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="h-12 w-12 rounded-full border border-zinc-800 bg-zinc-900/50 flex items-center justify-center text-zinc-400 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-5 h-5"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/558399465730"
+                target="_blank"
+                class="h-12 w-12 rounded-full border border-zinc-800 bg-zinc-900/50 flex items-center justify-center text-zinc-400 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div>
+            <h4 class="text-white font-bold text-lg mb-6">Navegação</h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="#inicio"
+                  class="text-zinc-400 hover:text-orange-500 transition-colors flex items-center gap-2"
+                  ><i data-lucide="chevron-right" class="w-4 h-4"></i> Início</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#o-que-e"
+                  class="text-zinc-400 hover:text-orange-500 transition-colors flex items-center gap-2"
+                  ><i data-lucide="chevron-right" class="w-4 h-4"></i> O
+                  Método</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#como-funciona"
+                  class="text-zinc-400 hover:text-orange-500 transition-colors flex items-center gap-2"
+                  ><i data-lucide="chevron-right" class="w-4 h-4"></i>
+                  Módulos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#depoimentos"
+                  class="text-zinc-400 hover:text-orange-500 transition-colors flex items-center gap-2"
+                  ><i data-lucide="chevron-right" class="w-4 h-4"></i>
+                  Depoimentos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/blog/index.html"
+                  class="text-zinc-400 hover:text-orange-500 transition-colors flex items-center gap-2"
+                  ><i data-lucide="chevron-right" class="w-4 h-4"></i> Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contato / Legal -->
+          <div>
+            <h4 class="text-white font-bold text-lg mb-6">Suporte</h4>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="mail"
+                  class="w-5 h-5 text-orange-500 shrink-0 mt-0.5"
+                ></i>
+                <span class="text-zinc-400 break-all"
+                  >suporte@pedroclubinvest.com.br</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="clock"
+                  class="w-5 h-5 text-orange-500 shrink-0 mt-0.5"
+                ></i>
+                <span class="text-zinc-400"
+                  >Suporte de Seg a Sex (09h às 18h)</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="pt-8 border-t border-zinc-800/50 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-zinc-500"
+        >
+          <p>© 2026 Clube Invest. Todos os direitos reservados.</p>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-zinc-300 transition-colors"
+              >Termos de Uso</a
+            >
+            <a href="#" class="hover:text-zinc-300 transition-colors"
+              >Privacidade</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="mt-8 text-xs text-zinc-600 text-justify border-t border-zinc-800/30 pt-6"
+        >
+          <p>
+            Aviso Legal: Os resultados podem variar de pessoa para pessoa.
+            Nenhuma informação aqui constitui promessa ou garantia de ganhos
+            exatos. O conteúdo desta mentoria é apenas para fins educacionais e
+            não deve ser interpretado como aconselhamento financeiro ou
+            recomendação de investimento. Todo investimento envolve riscos,
+            incluindo a possível perda de capital. Consulte um profissional
+            financeiro qualificado antes de tomar qualquer decisão de
+            investimento.
+          </p>
+        </div>
+      </div>
+    </footer>
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Mágica Absoluta do Buy and Hold (Comprar e Segurar) - Clube Invest</title>
+    <meta
+      name="description"
+      content="Transforme seu dinheiro em um poderoso aliado e conquiste sua prosperidade financeira com o treinamento definitivo!"
+    />
+    
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              orange: {
+                400: "#fb923c",
+                500: "#f97316",
+                600: "#ea580c",
+                900: "#7c2d12",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      body {
+        background-color: #000;
+        color: #d4d4d8;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          Arial,
+          sans-serif;
+        overflow-x: hidden;
+      }
+
+      .marquee-container {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        mask-image: linear-gradient(
+          to right,
+          transparent 0%,
+          rgba(0, 0, 0, 1) 5%,
+          rgba(0, 0, 0, 1) 95%,
+          transparent 100%
+        );
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent 0%,
+          rgba(0, 0, 0, 1) 5%,
+          rgba(0, 0, 0, 1) 95%,
+          transparent 100%
+        );
+      }
+      .marquee-content {
+        display: flex;
+        animation: marquee 80s linear infinite;
+        gap: 1.5rem;
+        padding-right: 1.5rem;
+        width: max-content;
+        flex-shrink: 0;
+      }
+      .marquee-container:hover .marquee-content {
+        animation-play-state: paused;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .card-zoom:hover img {
+        transform: scale(1.1);
+      }
+      .faq-answer {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease-out;
+      }
+      .faq-answer.open {
+        grid-template-rows: 1fr;
+      }
+      .faq-answer > div {
+        overflow: hidden;
+      }
+      .mobile-menu {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease-out;
+      }
+      .mobile-menu.open {
+        grid-template-rows: 1fr;
+      }
+      .mobile-menu > div {
+        overflow: hidden;
+      }
+
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 15px rgba(234, 88, 12, 0.4);
+        }
+        50% {
+          transform: scale(1.05);
+          box-shadow:
+            0 0 30px rgba(234, 88, 12, 0.8),
+            0 0 50px rgba(234, 88, 12, 0.3);
+        }
+      }
+      .btn-cta-anim {
+        animation: pulse-glow 2s infinite ease-in-out;
+      }
+    </style>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/GzFbX7t.png">
+</head>
+<body class="selection:bg-orange-500/30 bg-zinc-950 text-zinc-50 relative antialiased min-h-screen">
+  <div class="fixed inset-0 z-[-1] pointer-events-none bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+  <!-- HEADER -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/5 text-zinc-300"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between"
+      >
+        <a href="/index.html#inicio" class="relative block">
+          <img
+            src="https://i.imgur.com/GzFbX7t.png"
+            alt="Clube Invest Logo"
+            class="h-10 object-contain object-left"
+          />
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            href="/index.html#inicio"
+            class="text-sm font-medium hover:text-orange-500 transition-colors"
+            >Início</a
+          >
+          <a
+            href="/index.html#area-membros"
+            class="text-sm font-medium hover:text-orange-500 transition-colors"
+            >A Área de Membros</a
+          >
+          <a
+            href="/blog/index.html"
+            class="text-sm font-medium hover:text-orange-500 transition-colors"
+            >Blog</a
+          >
+          <a
+            href="/index.html#planos"
+            class="text-sm font-medium hover:text-orange-500 transition-colors"
+            >Mentorias</a
+          >
+          <a
+            href="/index.html#depoimentos"
+            class="text-sm font-medium hover:text-orange-500 transition-colors"
+            >Depoimentos</a
+          >
+          <a
+            href="/index.html#faq"
+            class="text-sm font-medium hover:text-orange-500 transition-colors"
+            >Dúvidas</a
+          >
+        </nav>
+
+        <a
+          href="https://wa.me/558399465730?text=Vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20mentoria"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden md:flex items-center gap-2 bg-orange-600 hover:bg-orange-500 text-white px-5 py-2.5 rounded-full font-semibold transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(234,88,12,0.3)]"
+        >
+          Falar no WhatsApp
+        </a>
+
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-zinc-400">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div
+        id="mobile-menu"
+        class="mobile-menu md:hidden bg-zinc-900 border-t border-white/5"
+      >
+        <div class="flex flex-col py-4 px-4 gap-4">
+          <a
+            href="/index.html#inicio"
+            class="mobile-link text-lg font-medium text-zinc-200"
+            >Início</a
+          >
+          <a
+            href="/index.html#area-membros"
+            class="mobile-link text-lg font-medium text-zinc-200"
+            >A Área de Membros</a
+          >
+          <a
+            href="/blog/index.html"
+            class="mobile-link text-lg font-medium text-zinc-200"
+            >Blog</a
+          >
+          <a
+            href="/index.html#planos"
+            class="mobile-link text-lg font-medium text-zinc-200"
+            >Mentorias</a
+          >
+          <a
+            href="/index.html#depoimentos"
+            class="mobile-link text-lg font-medium text-zinc-200"
+            >Depoimentos</a
+          >
+          <a href="/index.html#faq" class="mobile-link text-lg font-medium text-zinc-200"
+            >Dúvidas</a
+          >
+          <a
+            href="https://wa.me/558399465730?text=Vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20mentoria"
+            target="_blank"
+            class="mt-4 bg-orange-600 text-center text-white px-5 py-3 rounded-xl font-bold"
+          >
+            Falar no WhatsApp
+          </a>
+        </div>
+      </div>
+    </header>
+  
+  <main class="pt-32 pb-24 relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 relative z-10">
+      
+      <a href="/blog/index.html" class="inline-flex items-center text-orange-500 font-medium hover:text-orange-400 mb-8 transition-colors">
+        <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Voltar para o Blog
+      </a>
+      
+      <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">A Mágica Absoluta do Buy and Hold (Comprar e Segurar)</h1>
+      <div class="flex items-center gap-4 text-zinc-400 text-sm mb-12 pb-8 border-b border-white/10">
+        <span class="flex items-center"><i data-lucide="calendar" class="w-4 h-4 mr-2"></i> 09/06/2026</span>
+        <span class="flex items-center"><i data-lucide="youtube" class="w-4 h-4 mr-2 text-red-500"></i> Vídeo Artigo Youtube</span>
+      </div>
+
+      <div class="relative w-full rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(234,88,12,0.15)] mb-12" style="padding-top: 56.25%;">
+        <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/GVGN_j_R0R8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      
+      <article class="prose prose-invert prose-orange prose-lg max-w-none text-zinc-300">
+        
+      <h2 class="text-2xl md:text-3xl font-bold text-white mt-12 mb-6 flex items-center gap-3"><i data-lucide="check-circle-2" class="text-orange-500 w-6 h-6 shrink-0"></i> Menos Taxas, Mais Ganhos</h2>
+      <p class="leading-relaxed mb-6 text-lg">Evite ficar migrando de ação pra ação perseguindo as modinhas do ano. Seja sócio vitalício das excelentes e apenas pareça com aqueles ganhadores focados no lucro de longo prazo das empresas em paz.</p>
+    
+      </article>
+
+      <div class="mt-16 text-center">
+        <a href="/index.html#planos" class="btn-cta-anim inline-flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-500 text-white px-10 py-5 rounded-2xl font-bold text-xl uppercase tracking-wider transition-all hover:-translate-y-1 w-full sm:w-auto shadow-[0_10px_40px_rgba(234,88,12,0.4)]">
+           Garantir Minha Vaga Neste Momento <i data-lucide="rocket" class="w-6 h-6"></i>
+        </a>
+      </div>
+      
+    </div>
+  </main>
+  
+  <!-- FOOTER -->
+    <footer
+      class="bg-zinc-950 border-t border-zinc-800 pt-20 pb-10 relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(234,88,12,0.05),transparent_50%)] pointer-events-none"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 relative z-10">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 px-4 md:px-0"
+        >
+          <!-- Brand / About -->
+          <div class="lg:col-span-2">
+            <img
+              src="https://i.imgur.com/GzFbX7t.png"
+              alt="Clube Invest Logo"
+              class="h-14 mb-6 object-contain"
+            />
+            <p class="text-zinc-400 leading-relaxed max-w-md mb-8">
+              Mentoria especializada em construção e multiplicação de
+              patrimônio. Te ensinamos a transformar seu dinheiro em uma máquina
+              de gerar riqueza de forma segura e consistente.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="h-12 w-12 rounded-full border border-zinc-800 bg-zinc-900/50 flex items-center justify-center text-zinc-400 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-5 h-5"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="h-12 w-12 rounded-full border border-zinc-800 bg-zinc-900/50 flex items-center justify-center text-zinc-400 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-5 h-5"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/558399465730"
+                target="_blank"
+                class="h-12 w-12 rounded-full border border-zinc-800 bg-zinc-900/50 flex items-center justify-center text-zinc-400 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div>
+            <h4 class="text-white font-bold text-lg mb-6">Navegação</h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="#inicio"
+                  class="text-zinc-400 hover:text-orange-500 transition-colors flex items-center gap-2"
+                  ><i data-lucide="chevron-right" class="w-4 h-4"></i> Início</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#o-que-e"
+                  class="text-zinc-400 hover:text-orange-500 transition-colors flex items-center gap-2"
+                  ><i data-lucide="chevron-right" class="w-4 h-4"></i> O
+                  Método</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#como-funciona"
+                  class="text-zinc-400 hover:text-orange-500 transition-colors flex items-center gap-2"
+                  ><i data-lucide="chevron-right" class="w-4 h-4"></i>
+                  Módulos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#depoimentos"
+                  class="text-zinc-400 hover:text-orange-500 transition-colors flex items-center gap-2"
+                  ><i data-lucide="chevron-right" class="w-4 h-4"></i>
+                  Depoimentos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/blog/index.html"
+                  class="text-zinc-400 hover:text-orange-500 transition-colors flex items-center gap-2"
+                  ><i data-lucide="chevron-right" class="w-4 h-4"></i> Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contato / Legal -->
+          <div>
+            <h4 class="text-white font-bold text-lg mb-6">Suporte</h4>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="mail"
+                  class="w-5 h-5 text-orange-500 shrink-0 mt-0.5"
+                ></i>
+                <span class="text-zinc-400 break-all"
+                  >suporte@pedroclubinvest.com.br</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="clock"
+                  class="w-5 h-5 text-orange-500 shrink-0 mt-0.5"
+                ></i>
+                <span class="text-zinc-400"
+                  >Suporte de Seg a Sex (09h às 18h)</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="pt-8 border-t border-zinc-800/50 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-zinc-500"
+        >
+          <p>© 2026 Clube Invest. Todos os direitos reservados.</p>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-zinc-300 transition-colors"
+              >Termos de Uso</a
+            >
+            <a href="#" class="hover:text-zinc-300 transition-colors"
+              >Privacidade</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="mt-8 text-xs text-zinc-600 text-justify border-t border-zinc-800/30 pt-6"
+        >
+          <p>
+            Aviso Legal: Os resultados podem variar de pessoa para pessoa.
+            Nenhuma informação aqui constitui promessa ou garantia de ganhos
+            exatos. O conteúdo desta mentoria é apenas para fins educacionais e
+            não deve ser interpretado como aconselhamento financeiro ou
+            recomendação de investimento. Todo investimento envolve riscos,
+            incluindo a possível perda de capital. Consulte um profissional
+            financeiro qualificado antes de tomar qualquer decisão de
+            investimento.
+          </p>
+        </div>
+      </div>
+    </footer>
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

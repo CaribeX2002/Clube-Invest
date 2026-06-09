@@ -1,0 +1,6 @@
+{
+  "name": "Clube Invest",
+  "description": "Mentoria Clube Invest - Pedro Abreu. Sua Liberdade Financeira Começa Agora!",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

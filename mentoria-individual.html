@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="icon" type="image/png" href="https://i.imgur.com/GzFbX7t.png" />
+    <title>Mentoria Individual | Clube Invest</title>
+    <meta name="description" content="Mentoria Individual de Investimentos com Pedro Abreu: O acompanhamento elite com carteira montada de ponta a ponta. Atendimento exclusivo e completo." />
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              orange: { 400: "#fb923c", 500: "#f97316", 600: "#ea580c", 900: "#7c2d12" },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      body { background-color: #000; color: #d4d4d8; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; overflow-x: hidden; }
+      .btn-cta-anim { animation: pulseCTA 2s infinite; }
+      @keyframes pulseCTA {
+        0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.7); }
+        70% { box-shadow: 0 0 0 15px rgba(234, 88, 12, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); }
+      }
+    </style>
+  </head>
+  <body class="antialiased selection:bg-orange-500/30 selection:text-white">
+    <!-- Navbar simples -->
+    <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5 py-4">
+      <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <i data-lucide="trending-up" class="w-8 h-8 text-orange-500 group-hover:rotate-12 transition-transform"></i>
+          <span class="text-2xl font-black text-white tracking-tighter">CLUBE<span class="text-orange-500">INVEST</span></span>
+        </a>
+        <a href="index.html#planos" class="text-sm font-bold text-zinc-300 hover:text-white transition">← Voltar aos Planos</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 relative border-b border-zinc-900 bg-zinc-950">
+      <div class="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,rgba(234,88,12,0.2),transparent_60%)] pointer-events-none"></div>
+      <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+        <div class="inline-flex items-center gap-2 bg-gradient-to-r from-orange-600/20 to-orange-400/10 border border-orange-500/40 rounded-full px-5 py-2 text-orange-500 font-bold text-sm mb-6 shadow-[0_0_20px_rgba(234,88,12,0.2)]">
+          <i data-lucide="star" class="w-4 h-4 fill-orange-500"></i> ACOMPANHAMENTO ELITE
+        </div>
+        <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+          Mentoria <span class="text-orange-500">Individual</span>: Pegarei você pela mão até seu objetivo.
+        </h1>
+        <p class="text-xl text-zinc-400 mb-10 max-w-3xl mx-auto">
+          O formato Premium do Clube Invest. Ao final, teremos uma carteira SÓLIDA E DIVERSIFICADA construída <strong class="text-white">em conjunto</strong>, feita e estruturada especificamente para VOCÊ.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#checkout" class="btn-cta-anim bg-orange-600 text-white font-bold py-5 px-10 rounded-xl text-xl hover:bg-orange-500 transition-colors shadow-[0_0_20px_rgba(234,88,12,0.4)] inline-flex items-center justify-center gap-2">
+            APLICAR PARA INDIVIDUAL <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- O que você leva -->
+    <section class="py-20 bg-black">
+      <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center text-orange-500">A JORNADA MAIS RÁPIDA ATÉ RESULTADOS REAIS</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 flex flex-col gap-4 shadow-xl">
+            <div class="bg-orange-500/20 w-16 h-16 rounded-2xl flex items-center justify-center text-orange-500">
+               <i data-lucide="users" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white">Reuniões Particulares</h3>
+            <p class="text-zinc-400 leading-relaxed">Você não será apenas um número. Entrarei nas contas com você (de forma segura), entenderei suas metas de vida, profissão e sonhos para montar a carteira que encaixa no SEU modelo de vida.</p>
+          </div>
+          
+          <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 flex flex-col gap-4 shadow-xl">
+            <div class="bg-orange-500/20 w-16 h-16 rounded-2xl flex items-center justify-center text-orange-500">
+               <i data-lucide="shield-check" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white">Análise e Construção de Carteira</h3>
+            <p class="text-zinc-400 leading-relaxed">Não vamos falar só de teorias. Você abrirá a corretora e nós compraremos os ativos juntos (ações, FIIs, Tesouro, Exterior) para você não tremer na hora de enviar sua ordem ao mercado.</p>
+          </div>
+          
+          <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 flex flex-col gap-4 shadow-xl">
+            <div class="bg-orange-500/20 w-16 h-16 rounded-2xl flex items-center justify-center text-orange-500">
+               <i data-lucide="smartphone" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white">Contato Direto no WhatsApp</h3>
+            <p class="text-zinc-400 leading-relaxed">Uma linha paralela com prioridade alta. Dúvidas com alguma notícia? Incerteza se aquele CDB é bom? Basta mandar mensagem e respondo indicando a melhor ação a tomar.</p>
+          </div>
+
+          <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 flex flex-col gap-4 shadow-xl">
+            <div class="bg-orange-500/20 w-16 h-16 rounded-2xl flex items-center justify-center text-orange-500">
+               <i data-lucide="book-open" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white">Tudo do Plano Grupo Inclusos</h3>
+            <p class="text-zinc-400 leading-relaxed">Evidentemente, a base teórica e o conhecimento ainda serão construídos através de TODO acervo de módulos gravados, bônus e mentorias em grupo dos planos inferiores.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preço -->
+    <section id="checkout" class="py-24 relative overflow-hidden">
+      <div class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_bottom,rgba(234,88,12,0.1),transparent_70%)] pointer-events-none"></div>
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-6">MUDE DE VIDA E CONSTRUA UM PATRIMÔNIO SÓLIDO E RENTÁVEL</h2>
+        <div class="bg-gradient-to-b from-zinc-900 to-black border-2 border-orange-500 rounded-3xl p-8 md:p-14 shadow-[0_0_50px_rgba(234,88,12,0.2)] relative overflow-hidden mt-12">
+          
+          <div class="absolute top-0 right-1/2 translate-x-1/2 -translate-y-4 bg-orange-500 text-white font-bold px-6 py-1 rounded-full text-sm">
+             ⭐ O PLANO MAIS COMPLETAMENTE EXCLUSIVO
+          </div>
+
+          <h3 class="text-3xl font-black text-white mb-6 mt-4 relative z-10">INDIVIDUAL ELITE</h3>
+          <p class="text-lg text-zinc-400 mb-10 max-w-2xl mx-auto relative z-10">O acesso mais próximo de <strong>suporte direto e irrestrito</strong>, focado apenas no seu sucesso financeiro.</p>
+          
+          <div class="mb-4 relative z-10">
+             <p class="text-zinc-500 line-through text-xl">DE R$1.997,00 POR:</p>
+          </div>
+          <div class="flex items-center justify-center gap-2 mb-8 relative z-10">
+            <span class="text-3xl text-zinc-300">12x de</span>
+            <span class="text-7xl font-black text-orange-500">R$82,43</span>
+          </div>
+          <p class="text-zinc-400 mb-10 text-lg relative z-10">ou R$797 à vista no PIX / Cartão</p>
+
+          <a href="https://pay.kiwify.com.br/XJSgvH8?afid=7VHxF6ir" target="_blank" rel="noopener noreferrer" class="btn-cta-anim inline-flex w-full md:w-auto items-center justify-center gap-3 bg-orange-600 text-white font-bold py-6 px-12 rounded-xl text-2xl hover:bg-orange-500 transition relative z-10">
+             QUERO O ACESSO INDIVIDUAL
+          </a>
+          <p class="text-sm text-zinc-500 mt-8 relative z-10 flex items-center justify-center gap-2">
+            <i data-lucide="shield-check" class="w-5 h-5"></i> Risco Zero: 7 dias de garantia incondicional de satisfação
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950 py-10 border-t border-zinc-900 text-center">
+      <div class="max-w-7xl mx-auto px-4">
+        <p class="text-zinc-500 text-sm">© 2021 Clube Invest. Todos os direitos reservados.</p>
+        <p class="text-zinc-600 text-xs mt-2">Nenhuma informação contida neste site deve ser interpretada como uma promessa ou garantia de ganhos.</p>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
