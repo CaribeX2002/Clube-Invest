@@ -101,17 +101,6 @@
       .faq-answer > div {
         overflow: hidden;
       }
-      .mobile-menu {
-        display: grid;
-        grid-template-rows: 0fr;
-        transition: grid-template-rows 0.3s ease-out;
-      }
-      .mobile-menu.open {
-        grid-template-rows: 1fr;
-      }
-      .mobile-menu > div {
-        overflow: hidden;
-      }
 
       @keyframes pulse-glow {
         0%,
@@ -199,9 +188,8 @@
       <!-- MOBILE MENU -->
       <div
         id="mobile-menu"
-        class="mobile-menu md:hidden bg-zinc-900 border-t border-white/5"
-      >
-        <div class="flex flex-col py-4 px-4 gap-4">
+        class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out md:hidden bg-zinc-900">
+        <div class="flex flex-col py-4 px-4 gap-4 border-t border-white/5">
           <a
             href="/index.html#inicio"
             class="mobile-link text-lg font-medium text-zinc-200"
